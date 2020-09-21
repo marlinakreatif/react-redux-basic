@@ -2,6 +2,7 @@ import React from "react";
 import ListProduct from "./ListProduct";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ListPosts from "./ListPosts";
+import DetailPost from "./DetailPost";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           />
           <Route path="/product" component={ListProduct} />
           <Route path="/posts" component={ListPosts} />
+          <Route path="/detail-post/:id" component={DetailPost} />
         </Switch>
       </Router>
     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getPostsWithUser } from "../action";
 import UserName from "./UserName";
@@ -19,6 +20,11 @@ class ListPosts extends Component {
           <div className="card-boy" style={{ padding: "10px" }}>
             <h5 className="card-title">{post.title}</h5>
             <p className="card-text">{post.body}</p>
+          </div>
+          <div className="card-footer">
+            <Link to={`/detail-post/${post.id}`}>
+              <button className="btn btn-primary">Detail Post</button>
+            </Link>
           </div>
         </div>
       );
