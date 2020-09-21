@@ -5,7 +5,9 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 import rootReducers from "./reducers";
 
 ReactDOM.render(
@@ -13,8 +15,7 @@ ReactDOM.render(
     <Provider
       store={createStore(
         rootReducers,
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-          window.__REDUX_DEVTOOLS_EXTENSION__()
+        composeWithDevTools(applyMiddleware(thunk))
       )}
     >
       <App />

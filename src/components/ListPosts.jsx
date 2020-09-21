@@ -7,8 +7,32 @@ class ListPosts extends Component {
     this.props.getPosts();
   }
 
+  renderListPosts = () => {
+    const { listPosts } = this.props;
+    console.log(listPosts);
+    return listPosts.map((post) => {
+      return (
+        <div className="card" key={post.id}>
+          <div className="card-header">
+            <h6> {post.title} </h6>
+          </div>
+          <div className="card-boy" style={{padding:"10px"}}>
+            <p>{post.body}</p>
+          </div>
+        </div>
+      );
+    });
+  };
+
   render() {
-    return <div></div>;
+    return (
+      <div className="row">
+        <div className="col">
+          <h4>Daftar Posting</h4>
+        </div>
+        <div className="col-12">{this.renderListPosts()}</div>
+      </div>
+    );
   }
 }
 
