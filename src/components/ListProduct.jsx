@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ambilData, chooseProduct } from "../action/product";
+import DetailProduct from "./DetailProduct";
 
 class ListProduct extends Component {
   componentDidMount() {
@@ -35,6 +36,7 @@ class ListProduct extends Component {
           <hr />
         </div>
         {this.renderListProduct()}
+        <DetailProduct />
       </div>
     );
   }
