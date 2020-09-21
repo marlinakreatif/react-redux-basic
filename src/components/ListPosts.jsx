@@ -13,11 +13,10 @@ class ListPosts extends Component {
     return listPosts.map((post) => {
       return (
         <div className="card" key={post.id}>
-          <div className="card-header">
-            <h6> {post.title} </h6>
-          </div>
-          <div className="card-boy" style={{padding:"10px"}}>
-            <p>{post.body}</p>
+          <div className="card-header">{post.userId}</div>
+          <div className="card-boy" style={{ padding: "10px" }}>
+            <h5 className="card-title">{post.title}</h5>
+            <p className="card-text">{post.body}</p>
           </div>
         </div>
       );
